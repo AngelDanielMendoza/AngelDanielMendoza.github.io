@@ -1,0 +1,330 @@
+/* --- Estilos predefinidos --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+:root{
+    /* -- Colores de fondo -- */
+    --bg1: #272d2dff;
+    --bg2: #50514fff;
+    --bg3: #f6f8ffff;
+    --available: #16a637;
+
+    /* -- Borders color -- */
+    /* Posiblemente estos tambien los implemente como backgroundColor */
+    --br1: #8f9396ff;
+    --br2: #c3c6cbff;
+
+    /* -- Tamaño de fuente -- */
+    --fs1: 14px;
+    --fs2: 18px;
+    --fs3: 22px;
+    --fs4: 26px;
+    --fs5: 36px;
+}
+button{
+    cursor: pointer;
+}
+.active{
+    display: block !important;
+}
+.text-art{
+    display: none;
+    animation: aparecer .2s ease-in-out;
+}
+
+/* --- Estilos Contenedor izquierdo --- */
+body{
+    max-width: 1400px;
+    padding: 150px 70px 150px 70px;
+    margin: auto;
+    background-color: var(--bg1);
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 40px;
+}
+.contenedor-izq{
+    justify-self: center;
+}
+.contenedor-izq aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg2);
+    width: 300px;
+    padding: 20px 0;
+    border: 2px solid var(--br1);
+    border-radius: 30px;
+    position: sticky;
+    top: 60px;
+    color: #f3f3f3;
+}
+.contenedor-izq aside .disponible-for-job{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg1);
+    padding: 8px 10px;
+    border-radius: 41px;
+    margin-top: 10px;
+}
+.contenedor-izq aside .disponible-for-job p{
+    font-size: var(--fs1);
+}
+.contenedor-izq aside .disponible-for-job i{
+    font-size: 8px;
+    color: var(--available);
+}
+.contenedor-izq aside figure img{
+    width: 180px;
+    border-radius: 60px;
+}
+
+
+/* --- Estilos Contenedor derecho --- */
+/* -- Nav -- */
+.contenedor-der{
+    position: relative;
+}
+.contenedor-der header{
+    position: absolute;
+    top: -99px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg3);
+    width: 460px;
+    height: 60px;
+    border-radius: 25px;
+}
+.contenedor-der header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100%;
+}
+.contenedor-der header nav .btn-nav{
+    font-size: var(--fs3);
+    border: none;
+    background-color: transparent;
+    color: var(--br1);
+    transition: all .2s ease-out;
+}
+header nav .btn-nav.active{
+    color: black;
+}
+
+/* -- Article | Sobre mi -- */
+.contenedor-der article, 
+.art-sobre-mi{
+    background-color: var(--bg2);
+    border: 2px solid var(--br1);
+    border-radius: 30px;
+    padding: 25px 30px;
+    color: #f3f3f3;
+}
+
+.art-sobre-mi{
+    display: none;
+}
+/* -- section | Sobre mi -- */
+article .sobre-mi h1{
+    font-size: var(--fs5);
+    padding-bottom: 8px;
+}
+article .sobre-mi p{
+    padding-bottom: 14px;    
+    text-align: justify;
+}
+article .sobre-mi p:last-child{
+    padding-bottom: 20px;
+}
+
+/* -- section | Puedo Hacer -- */
+article .puedo-hacer h2{
+    font-size: var(--fs3);
+    padding-bottom: 20px;
+}
+article .puedo-hacer .items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 35px;
+}
+article .puedo-hacer .items .item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: var(--bg3);
+    color: black;
+    border-radius: 20px;
+}
+article .puedo-hacer .item i{
+    font-size: var(--fs4);
+    padding: 16px;
+    border-radius: 16px;
+    background-color: var(--br1);
+    width: fit-content;
+
+}
+article .puedo-hacer .item h3{
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+article .puedo-hacer .item p{
+    font-size: var(--fs1);
+}
+
+/* -- Seccion | Portafolio -- */
+.art-portafolio .portafolio h1{
+    font-size: var(--fs5);
+}
+.proyectos h2{
+    font-size: var(--fs3);
+    padding-top: 10px;
+}
+.art-portafolio .portafolio .btn-portafolio{
+    font-size: var(--fs2);
+    padding: 8px 16px;
+    margin: 10px 0;
+    background-color: var(--bg1);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    transition: all .2s ease-out, transform .09s ease-out;
+    will-change: transform, background-color, color;
+    &:hover{
+        background-color: var(--bg3);
+        color: var(--bg1);
+    }
+    &:active{
+        transform: scale(.95);
+    }
+}
+.proyectos .items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 30px;
+    padding: 20px;
+}
+.proyectos .items .item figure{
+    border-radius: 20px;
+    position: relative;
+}
+.proyectos .items .item figure img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+.proyectos .items .item figure p{
+    display: none;
+    font-size: var(--fs1);
+    position: absolute;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.section-img::before{
+    content: "";
+    position: absolute;
+    background-color: #000000a0;
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity .3s ease-in-out;
+}
+.section-img.active-more-info::before{
+    opacity: 1;
+}
+.section-img.active-more-info .section-img-p{
+    display: block !important;
+    animation: aparecer .3s ease-in-out;
+}
+@keyframes aparecer {
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+@keyframes desaparecer {
+    0%{ opacity: 1; }
+    100%{ opacity: 0; }
+}
+
+/* --- Article | contacto --- */
+.contacto section h1{
+    font-size: var(--fs5);
+    padding-bottom: 10px;
+}
+.contacto section > p{
+    padding-bottom: 20px;
+}
+.contacto section .items{
+    display: grid;
+    gap: 30px;
+}
+.contacto section .items .item{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--bg1);
+    border-radius: 18px;
+    padding: 15px 20px;
+    font-size: var(--fs2);
+}
+.contacto section .items .item a{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--bg3);
+}
+
+@media screen and (max-width: 1173px) {
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 150px;
+        padding: 80px 70px 80px 70px;
+        background-color: var(--bg1);
+    }
+    .contenedor-der{
+        position: relative;
+    }
+    .contenedor-der header{
+        top: -100px;
+    }
+    /* --- Estilos Contenedor Izquierdo --- */
+    .contenedor-izq{
+        width: 100%;
+    }
+    .contenedor-izq aside{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        width: 100%;
+        padding: 20px 0 20px 40px;
+    }
+    .contenedor-izq aside .disponible-for-job{
+        border-radius: 40px;
+    }
+    .contenedor-izq aside figure img{
+        border-radius: 20px;
+    }
+}
+@media screen and (max-width: 650px){
+    body{
+        min-width: 650px;
+    }
+}
